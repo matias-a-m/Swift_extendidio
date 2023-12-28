@@ -1,66 +1,68 @@
 import Foundation
 
-// Data model
-struct DataModel {
-    var name: String
-    var age: Int
+// Modelo de datos
+struct ModeloDeDatos {
+    var nombre: String
+    var edad: Int
 }
 
-// Definition of the ViewState enumeration
-enum ViewState {
-    case loading
-    case displayingData(DataModel)
-    case error(message: String)
+// Definición de la enumeración ViewState
+enum EstadoVista {
+    case cargando
+    case mostrandoDatos(ModeloDeDatos)
+    case error(mensaje: String)
 }
 
-// Definition of the ViewController class
+// Definición de un resultado de carga (éxito o fracaso)
+enum ResultadoCarga {
+    case exito(datos: ModeloDeDatos)
+    case fracaso(mensaje: String)
+}
+
+// Definición de la clase ViewController
 class ViewController {
-    var currentViewState: ViewState = .loading
+    var estadoVistaActual: EstadoVista = .cargando
 
-    // Function to simulate data loading from an external source
-    func loadData(completion: @escaping (LoadResult) -> Void) {
+    // Función para simular la carga de datos desde una fuente externa
+    func cargarDatos(completion: @escaping (ResultadoCarga) -> Void) {
         DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
-            // Simulating successful data loading in this example
-            let loadedData = DataModel(name: "John Doe", age: 30)
-            completion(.success(data: loadedData))
+            // Simulación de carga exitosa de datos en este ejemplo
+            let datosCargados = ModeloDeDatos(nombre: "John Doe", edad: 30)
+            completion(.exito(datos: datosCargados))
             
-            // We could also simulate an error by uncommenting the following line:
-            // let errorMessage = "Error loading data"
-            // completion(.failure(message: errorMessage))
+            // También podríamos simular un error descomentando la siguiente línea:
+            // let mensajeError = "Error cargando datos"
+            // completion(.fracaso(mensaje: mensajeError))
         }
     }
 
-    // Function to handle the view state
-    func handleViewState(_ newState: ViewState) {
-        print("State transition:")
-        print("From \(currentViewState) to \(newState)")
-        currentViewState = newState
-        animateStateChange()
+    // Función para manejar el estado de la vista
+    func manejarEstadoVista(_ nuevoEstado: EstadoVista) {
+        print("Transición de estado:")
+        print("De \(estadoVistaActual) a \(nuevoEstado)")
+        estadoVistaActual = nuevoEstado
+        animarCambioDeEstado()
     }
 
-    // Function to animate changes in the view state (simulated)
-    func animateStateChange() {
-        print("Animation: Animated state change")
+    // Función para animar cambios en el estado de la vista (simulado)
+    func animarCambioDeEstado() {
+        print("Animación: Cambio de estado animado")
     }
 }
 
-// Definition of a load result (success or failure)
-enum LoadResult {
-    case success(data: DataModel)
-    case failure(message: String)
-}
 
-// Using the ViewController class in a Playground
-let viewController = ViewController()
 
-// Simulating data loading after 3 seconds
+// Uso de la clase ViewController en un Playground
+let controladorVista = ViewController()
+
+// Simulación de carga de datos después de 3 segundos
 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-    viewController.loadData { result in
-        switch result {
-        case .success(let data):
-            viewController.handleViewState(.displayingData(data))
-        case .failure(let message):
-            viewController.handleViewState(.error(message: message))
+    controladorVista.cargarDatos { resultado in
+        switch resultado {
+        case .exito(let datos):
+            controladorVista.manejarEstadoVista(.mostrandoDatos(datos))
+        case .fracaso(let mensaje):
+            controladorVista.manejarEstadoVista(.error(mensaje: mensaje))
         }
     }
 }

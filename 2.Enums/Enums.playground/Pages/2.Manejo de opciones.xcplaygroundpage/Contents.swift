@@ -1,9 +1,9 @@
 import Foundation
 
-// Definición de la enumeración OpcionesNotificacion
+// Definición de una estructura llamada OpcionesNotificacion que adopta el protocolo OptionSet.
 struct OpcionesNotificacion: OptionSet {
     let rawValue: Int
-
+    
     static let sonido = OpcionesNotificacion(rawValue: 1 << 0)
     static let vibracion = OpcionesNotificacion(rawValue: 1 << 1)
     static let luz = OpcionesNotificacion(rawValue: 1 << 2)
@@ -12,19 +12,11 @@ struct OpcionesNotificacion: OptionSet {
 // Función para imprimir la configuración de notificación
 func imprimirConfiguracion(tipo: String, configuracion: OpcionesNotificacion) {
     print("Configuración de notificación para \(tipo):")
-
-    if configuracion.contains(.sonido) {
-        print("- Sonido activado")
-    }
-
-    if configuracion.contains(.vibracion) {
-        print("- Vibración activada")
-    }
-
-    if configuracion.contains(.luz) {
-        print("- Luz activada")
-    }
-
+    
+    if configuracion.contains(.sonido) { print("- Sonido activado") }
+    if configuracion.contains(.vibracion) { print("- Vibración activada") }
+    if configuracion.contains(.luz) { print("- Luz activada") }
+    
     print("-----")
 }
 
