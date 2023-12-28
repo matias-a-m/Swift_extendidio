@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='1 - Operaciones Asíncronas'/>
+        <page name='2 - Manejo de Eventos'/>
+        <page name='3 - Animaciones'/>
+        <page name='4 -  Delegados y Completions'/>
+        <page name='5 - Captura de Variables'/>
+    </pages>
+</playground>
