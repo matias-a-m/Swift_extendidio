@@ -4,5 +4,7 @@
         <page name='1.Struct basica'/>
         <page name='2.Struct con método'/>
         <page name='3.Structs con Inicializadores Personalizados'/>
+        <page name='4.MutatingMethods'/>
+        <page name='5.Struct con protocolos'/>
     </pages>
 </playground>
