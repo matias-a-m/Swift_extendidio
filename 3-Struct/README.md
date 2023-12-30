@@ -1,3 +1,4 @@
+# Ejemplo práctico de Structs con Protocolos
 # Patrones de Diseño en el Código
 
 ## 1. Modelo-View-ViewModel (MVVM):
