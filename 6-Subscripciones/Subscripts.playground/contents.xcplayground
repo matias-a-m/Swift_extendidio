@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='1-Acceso a Datos en Estructuras Personalizadas'/>
+        <page name='2-Acceso a Elementos en Tipos de Colección Personalizados'/>
+        <page name='3-Acceso a Propiedades Calculadas'/>
+    </pages>
+</playground>
