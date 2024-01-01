@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='1-WillSet&amp;DidSet'/>
+        <page name='2-public var'/>
+        <page name='3-private var'/>
+        <page name='4-internal var'/>
+        <page name='5-fileprivate'/>
+        <page name='6-open'/>
+    </pages>
+</playground>
