@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='1-Inicializador Designado'/>
+        <page name='2-Inicializador de conveniencia'/>
+        <page name='3-Inicializador de delegación'/>
+        <page name='4-Inicializador Failable'/>
+        <page name='5-Inicializador de Desreferencia'/>
+    </pages>
+</playground>
