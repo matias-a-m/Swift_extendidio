@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='5.0' target-platform='ios' buildActiveScheme='true' executeOnSourceChanges='false' importAppTypes='true'>
-    <timeline fileName='timeline.xctimeline'/>
+<playground version='6.0' target-platform='ios' display-mode='raw' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='1-Liberación de Recursos Externos'/>
+        <page name='2-Cancelación de Tareas Asincrónicas'/>
+        <page name='3-Liberación de Observadores'/>
+        <page name='4-Liberacion de recursos graficos'/>
+        <page name='5-Gestion de Cache'/>
+    </pages>
 </playground>
